@@ -44,7 +44,7 @@ function App(): JSX.Element {
             <></>
           ) : (
             <span className="text-lg font-bold flex items-center">
-              Press Upload, otherwise click on {selectedFile?.name}
+              Press Upload or click on {selectedFile?.name}
             </span>
           )}
           {/* Actual file input, hidden */}
