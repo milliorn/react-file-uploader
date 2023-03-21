@@ -1,6 +1,59 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    ":followTag(typescript, next)",
+    ":followTag(typescript, rc)"
+  ],
+  "automergeSchedule": [
+    "before 2am"
+  ],
+  "npm": {
+    "stabilityDays": 3
+  },
+  "packageRules": [
+    {
+      "commitMessageTopic": "Node.js",
+      "excludePackageNames": [
+        "calico/node",
+        "kindest/node"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "node"
+      ],
+      "matchPackagePatterns": [
+        "/node$"
+      ]
+    },
+    {
+      "groupName": "definitelyTyped",
+      "matchPackagePrefixes": [
+        "@types/"
+      ]
+    },
+    {
+      "extends": "packages:postcss",
+      "groupName": "postcss packages"
+    },
+    {
+      "groupName": "react monorepo",
+      "matchPackageNames": [
+        "@types/react",
+        "@types/react-dom"
+      ]
+    },
+    {
+      "extends": "monorepo:vitest",
+      "groupName": "vitest monorepo",
+      "matchUpdateTypes": [
+        "digest",
+        "patch",
+        "minor",
+        "major"
+      ]
+    }
   ]
 }
