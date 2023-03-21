@@ -1,4 +1,4 @@
-# react-multer-express-node
+# react-file-uploader
 
 This project was bootstrapped with [Vite](https://vitejs.dev/guide/#getting-started).
 
