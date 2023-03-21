@@ -43,7 +43,7 @@ function App(): JSX.Element {
           {!isFilePicked ? (
             <></>
           ) : (
-            <span className="text-lg font-bold flex items-center">
+            <span className="text-lg font-bold flex items-center mx-auto my-0 pt-4 pb-2 px-4 text-center">
               Press Upload or click on {selectedFile?.name}
             </span>
           )}
