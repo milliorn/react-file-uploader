@@ -31,3 +31,7 @@ Runs the app in the preview mode.
 ## Install Tailwind CSS with Vite
 
 <https://tailwindcss.com/docs/guides/vite#react>
+
+## Renovate documentation
+
+<https://docs.renovatebot.com/c>
