@@ -23,6 +23,7 @@ function App(): JSX.Element {
     <div className="flex flex-col items-center justify-center h-screen bg-gray-800 text-white">
       {/* Heading */}
       <h1 className="text-3xl font-bold underline text-center">Upload File</h1>
+
       {/* Form */}
       <form className="mt-8 flex flex-col items-center" onSubmit={handleSubmit}>
         {/* File upload input */}
@@ -36,6 +37,7 @@ function App(): JSX.Element {
               {selectedFile ? selectedFile.name : "Select a file"}
             </span>
           </label>
+
           {isFilePicked && (
             <span className="text-lg font-bold flex items-center mx-auto my-0 pt-4 pb-2 px-4 text-center">
               Press Upload or click on {selectedFile?.name}
@@ -51,6 +53,7 @@ function App(): JSX.Element {
             className="hidden"
           />
         </div>
+
         {/* Submit button */}
         <button
           type="submit"
