@@ -20,33 +20,30 @@ function App(): JSX.Element {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-800 text-white">
       {/* Heading */}
       <h1 className="text-3xl font-bold underline text-center">Upload File</h1>
+
       {/* Form */}
       <form className="mt-8 flex flex-col items-center" onSubmit={handleSubmit}>
         {/* File upload input */}
         <div className="mb-4">
           <label
             htmlFor="file-upload"
-            className="cursor-pointer bg-blue-200 hover:bg-blue-400 rounded text-black font-bold py-2 px-4 flex flex-col max-w-xs items-center justify-center mx-auto my-0"
+            className="cursor-pointer bg-blue-200 hover:bg-blue-400 rounded font-bold py-2 px-4 flex flex-col max-w-xs items-center justify-center mx-auto my-0"
           >
             {/* Display "Select a file" if no file has been picked yet, otherwise display the selected file name */}
-            {!isFilePicked ? (
-              <span className="text-lg font-bold">Select a file</span>
-            ) : (
-              <span className="text-lg font-bold text-center">
-                {selectedFile?.name}
-              </span>
-            )}
+            <span className="text-lg font-bold text-center text-black">
+              {selectedFile ? selectedFile.name : "Select a file"}
+            </span>
           </label>
-          {!isFilePicked ? (
-            <></>
-          ) : (
-            <span className="text-lg font-bold flex items-center">
+
+          {isFilePicked && (
+            <span className="text-lg font-bold flex items-center mx-auto my-0 pt-4 pb-2 px-4 text-center">
               Press Upload or click on {selectedFile?.name}
             </span>
           )}
+
           {/* Actual file input, hidden */}
           <input
             id="file-upload"
@@ -56,6 +53,7 @@ function App(): JSX.Element {
             className="hidden"
           />
         </div>
+
         {/* Submit button */}
         <button
           type="submit"
