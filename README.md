@@ -27,3 +27,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run preview`
 
 Runs the app in the preview mode.
+
+## Install Tailwind CSS with Vite
+
+<https://tailwindcss.com/docs/guides/vite#react>
